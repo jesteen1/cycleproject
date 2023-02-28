@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+</head>
+<body class="black">
+    <div class="">
+
+        <button class="button">buy one</button>
+    </div>
+</body>
+<style>
+    :root{
+        --width:196px;
+        --height:74px;
+    }
+    .black{
+        background-color: black;
+
+    }
+.button{
+    position: relative;
+   
+    width: 200px ;
+    font-size: 50px;
+    height: 80px;
+    background-color: red;
+    color:white;
+    border-radius: 7px;
+}
+.button::before{
+    
+    left: 0;
+    top: 0;
+    content: "";
+position: absolute;
+    /* width:111px ; */
+    width: 0px;
+    height: 0px;
+    /* height: 45px; */
+animation:   border-top 3s infinite alternate;
+    border-right:2px solid #51E8EF;
+    border-top: 2px solid #51E8EF;
+    border-radius:0px ;
+}
+
+.button::after{
+    
+    right: 0;
+    bottom: 0;
+    content: "";
+position: absolute;
+    /* width:111px ; */
+    width: 0px;
+    height: 0px;
+    /* height: 45px; */
+animation: border-top 3s infinite alternate;
+animation-play-state: running ;
+    border-left:2px solid #51E8EF;
+    border-bottom: 2px solid #51E8EF;
+}
+.button:hover {
+    cursor: pointer;
+}
+.button::after:hover ~.button{
+    animation-play-state:paused ;
+}
+.button:hover .button::after{
+animation-play-state:paused ;
+cursor: pointer;
+}
+@keyframes border-top {
+    0%{                height: 0;
+                    width: 0;
+    }
+50%{
+    width: var(--width);
+height: 0;
+}
+100%{
+    width: var(--width);
+    height: var(--height);
+}
+}
+@keyframes border-bottom {
+    0%{                height: 0;
+                    width: 0;
+    }
+50%{
+    width: var(--width);
+height: 0;
+}
+100%{
+    width: var(--width);
+    height: var(--height);
+}
+}
+</style>
+</html>
