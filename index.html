@@ -53,8 +53,8 @@
         </div>
         <div class="relative text-white hidden xl:block" id="home">
             <img src="./bike.svg" alt="" class=" ">
-            <div class="top-0 bottom-0 left-0 right-0 absolute mt-96   ml-10 pl-28 flex">
-                <div class="main  "><!--this left side thing-->
+            <div class="top-0 bottom-0 left-0 right-0 absolute mt-96 ml-10 pl-28 flex">
+                <div class="main"><!--this left side thing-->
 
                     <div>
 
@@ -68,7 +68,7 @@
                             controls. The company's bikes are also built with durable materials and are designed to
                             withstand the wear and tear of everyday use.</p>
                     </div>
-                    <div class="mt-4 relative">
+                    <div class="mt-14 relative">
                         <a target="_blank"
                             href="https://www.amazon.in/EMotorad-X2-Mountain-Detachable-Suspension/dp/B0BSLL33PZ/ref=sr_1_4?crid=WU5UCWOFFIPF&keywords=electric%2Bcycle&qid=1677837842&sprefix=electric%2Bcycl%2Caps%2C409&sr=8-4&th=1">
                             <button class="button">BUY ONE </button></a>
@@ -182,7 +182,7 @@
 
         </div>
     </section>
-    <section class="  text-white  mt-20 " id="brake">
+    <section class="  text-white  " id="brake">
         <div class="flex">
 
             <div class="relative overflow-hidden  w-30 hidden xl:block parent text-white">
@@ -424,13 +424,60 @@
             </ol>
         </div>
     </section>
+    <section class="p-5 text-white   bg-black">
+        <p class="capitalize text-4xl p-5 text-center font-bold ">our products</p>
+        <div class="flex justify-center" data-aos="zoom-in">
+
+            <div class="lightcolor2  p-5 rounded">
+                <div class=" shadow1 flex  image-bigger overflow-hidden rounded ">
+    <div class=" flex image-move" id="image_moving">
+    
+        <img src="./cycle1.jpg"  alt="image " class="image-bigger" id="image1">
+        <img src="./battery.png" alt=""class="image-bigger" id="image2">
+        <img src="./cycle2.jpg" alt=""class="image-bigger" id="image3">
+        <img src="./cycle3.jpg" alt=""class="image-bigger" id="image4">
+    </div>
+                </div>
+                <div class="mt-3 flex gap-1 justify-center hidden">
+                    <button class=" border w-5 h-5  rounded-3xl  border-green-400" name="image1" id="btn">
+                    </button>
+                    <button class=" border w-5 h-5 rounded-3xl  border-green-400" name="image2" id="btn">
+                    </button>
+                    <button class=" border w-5 h-5 rounded-3xl  border-green-400" name="image3" id="btn">
+                    </button>
+                    <button class=" border w-5 h-5 rounded-3xl  border-green-400" name="image4" id="btn">
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 <style>
+    .shadow1{
+        transition: all .5s linear;
+        cursor: pointer;
+    }
+    .shadow1:hover{
+        box-shadow: #008cff6b 5px 5px 20px , rgba(0, 140, 255, 0.397) -5px -5px 20px ;
+
+    }
+    .image-move{
+       transition: all 1s linear;
+        /* margin-left: -880px; */
+       
+    }
+    .image-bigger{
+        width: 400px;
+        
+    }
     html {
         scroll-behavior: smooth;
     }
-
+.lightcolor2{
+background-color: rgba(0, 0, 0, 0.514);
+}
     .points::before {
         font-size: 40px;
         font-weight: bolder;
@@ -758,6 +805,42 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
+</script>
+<script>
+var image_moving= document.getElementById("image_moving");
+let number=400;
+var btn= document.querySelectorAll("#btn");
+var list=0
+// btn[list].classList.add('bg-green-500')
+setInterval(() => {
+    // btn[list].classList.add('bg-green-500');
+  
+   console.log(number);
+    image_moving.style.marginLeft="-"+ number+"px";
+    number=number+400;
+   
+//   list=list+1
+  
+    console.log("list"+list);
+   
+  
+    
+    console.log("added +" +number);
+   
+
+    if(number==1600){
+        number=0;
+     console.log("changed"+number);
+     list=0;
+
+       
+    }
+  
+    console.log("finallist"+list);
+    btn[temp].classList.add("bg-green-500");
+}, 3000);
+
+
 </script>
 
 </html>
